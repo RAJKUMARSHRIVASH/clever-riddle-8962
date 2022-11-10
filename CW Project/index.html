@@ -11,14 +11,19 @@
         body {
             width: 100%;
             margin: auto;
-            /* overflow-y:hidden; */
             font-family: 'Rajdhani', sans-serif;
 
         }
 
-        .slider>img {
+        .scroll {
+            /* overflow-y: scroll; */
+            /* scroll-snap-type: mandatory; */
+        }
+
+        .scroll img {
             width: 100%;
             /* animation: slide infinite 3s  alternate; */
+            height: 100vh;
         }
 
         .main-container {
@@ -40,7 +45,7 @@
             justify-content: space-evenly;
             align-items: baseline;
             margin-left: -2%;
-            
+
         }
 
         #logo-design-container>h1:nth-child(1) {
@@ -152,6 +157,20 @@
             justify-content: center;
             align-items: flex-end;
         }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+        #slides {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 30px;
+        }
+        #slides>input {
+             
+
+        }
     </style>
 </head>
 
@@ -203,15 +222,23 @@
         </div>
 
     </div>
-    <div class="slider">
-        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new/subhome-xmedia-45//w/1920/IMAGE-landscape-default-fill-72e23389-afdf-460f-95e6-0b2eb0aab4d3-default_0.jpg?ts=1667838049147"
-            alt="">
-        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/1920/IMAGE-landscape-fill-c68605f6-1f94-4830-8f4a-0f3bf22017e2-default_0.jpg?ts=1663579002306"
-            alt="">
-        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-shoes-bags/subhome-xmedia-45//w/1920/IMAGE-landscape-fill-c4b22866-4811-4b7e-8882-d7ed0270ca1f-default_0.jpg?ts=1667808315533"
-            alt="">
-        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-party/subhome-xmedia-45//w/1920/IMAGE-landscape-default-fill-46622de3-a329-4630-a57a-d51bbc789963-default_0.jpg?ts=1667808571845"
-            alt="">
+    <div class="scroll">
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new/subhome-xmedia-45//w/1920/IMAGE-landscape-default-fill-72e23389-afdf-460f-95e6-0b2eb0aab4d3-default_0.jpg?ts=1667838049147"
+                alt="">
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/1920/IMAGE-landscape-fill-c68605f6-1f94-4830-8f4a-0f3bf22017e2-default_0.jpg?ts=1663579002306"
+                alt="">
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-shoes-bags/subhome-xmedia-45//w/1920/IMAGE-landscape-fill-c4b22866-4811-4b7e-8882-d7ed0270ca1f-default_0.jpg?ts=1667808315533"
+                alt="">
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-party/subhome-xmedia-45//w/1920/IMAGE-landscape-default-fill-46622de3-a329-4630-a57a-d51bbc789963-default_0.jpg?ts=1667808571845"
+                alt="">
+        </div>
         <div class="newsltrpage-scroll">
             <h3>JOIN OUR NEWS LETTTER</h3>
             <div id="nwsLtr-join-options">
@@ -225,14 +252,13 @@
             <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Aspernatur reiciendis corporis <br> neque,
                 optio expedita cumque enim iusto</p>
         </div>
-        <div class="slides">
-            <input type="radio" name="radio-btn" id="radio1">
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-            <input type="radio" name="radio-btn" id="radio4">
-            <input type="radio" name="radio-btn" id="radio5">
-        </div>
-
+    </div>
+    <div id="slides">
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        <input type="radio" name="radio-btn" id="radio5">
     </div>
 
 </body>
@@ -240,8 +266,9 @@
 </html>
 <script>
 
+
     //---------------------------------------------------------------------------
-    
+
     window.addEventListener("scroll", changeColorOfNavBar);
 
     function changeColorOfNavBar() {
