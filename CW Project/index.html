@@ -12,9 +12,11 @@
             width: 100%;
             margin: auto;
             /* overflow-y:hidden; */
+            font-family: 'Rajdhani', sans-serif;
+
         }
 
-        body>img {
+        .slider>img {
             width: 100%;
             /* animation: slide infinite 3s  alternate; */
         }
@@ -27,10 +29,8 @@
             position: fixed;
             width: 100%;
         }
-        #top-nav-bar{
 
-
-        }
+        #top-nav-bar {}
 
         #logo-design-container {
             width: 340px;
@@ -40,6 +40,7 @@
             justify-content: space-evenly;
             align-items: baseline;
             margin-left: -2%;
+            
         }
 
         #logo-design-container>h1:nth-child(1) {
@@ -66,6 +67,7 @@
             justify-content: space-evenly;
             /* margin: auto; */
         }
+
         #Fixed-nav-bar:hover {
             cursor: pointer;
         }
@@ -104,13 +106,51 @@
             align-items: flex-end;
             /* border: 1px solid; */
             margin-top: 35%;
-            color:aliceblue;
+            color: aliceblue;
         }
+
         #bottom-nav-bar>h4:hover {
             cursor: pointer;
         }
-        #menu-button{
+
+        #menu-button {
             color: aliceblue;
+        }
+
+        .newsltrpage-scroll {
+            /* border: 1px solid; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-weight: lighter;
+            color: rgb(58, 57, 57);
+            font-family: 'Rajdhani', sans-serif;
+            justify-content: center;
+            width: 100%;
+            margin: auto;
+            gap: 100px;
+        }
+
+        .newsltrpage-scroll>p {
+            margin-left: -70%;
+            font-size: 12px;
+
+        }
+
+        .newsltrpage-scroll>h3 {
+            margin-top: 15%;
+
+        }
+
+        #nwsLtr-join-options {
+            display: flex;
+            gap: 2%;
+            /* border: 1px solid; */
+            width: 100%;
+            justify-content: center;
+            align-items: flex-end;
         }
     </style>
 </head>
@@ -136,7 +176,7 @@
                         <h4>LOG IN</h4>
                         <h4>HELP</h4>
                         <!-- for cart symbole -->
-                        <h4>&#128722;</h4> 
+                        <h4>&#128722;</h4>
 
                     </div>
                 </div>
@@ -163,40 +203,73 @@
         </div>
 
     </div>
-    <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new/subhome-xmedia-45//w/1920/IMAGE-landscape-default-fill-72e23389-afdf-460f-95e6-0b2eb0aab4d3-default_0.jpg?ts=1667838049147" alt="">
-    <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/1920/IMAGE-landscape-fill-c68605f6-1f94-4830-8f4a-0f3bf22017e2-default_0.jpg?ts=1663579002306" alt="">
-    <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-shoes-bags/subhome-xmedia-45//w/1920/IMAGE-landscape-fill-c4b22866-4811-4b7e-8882-d7ed0270ca1f-default_0.jpg?ts=1667808315533" alt="">
-    <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-party/subhome-xmedia-45//w/1920/IMAGE-landscape-default-fill-46622de3-a329-4630-a57a-d51bbc789963-default_0.jpg?ts=1667808571845" alt="">
+    <div class="slider">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new/subhome-xmedia-45//w/1920/IMAGE-landscape-default-fill-72e23389-afdf-460f-95e6-0b2eb0aab4d3-default_0.jpg?ts=1667838049147"
+            alt="">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/1920/IMAGE-landscape-fill-c68605f6-1f94-4830-8f4a-0f3bf22017e2-default_0.jpg?ts=1663579002306"
+            alt="">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-shoes-bags/subhome-xmedia-45//w/1920/IMAGE-landscape-fill-c4b22866-4811-4b7e-8882-d7ed0270ca1f-default_0.jpg?ts=1667808315533"
+            alt="">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-party/subhome-xmedia-45//w/1920/IMAGE-landscape-default-fill-46622de3-a329-4630-a57a-d51bbc789963-default_0.jpg?ts=1667808571845"
+            alt="">
+        <div class="newsltrpage-scroll">
+            <h3>JOIN OUR NEWS LETTTER</h3>
+            <div id="nwsLtr-join-options">
+                <h4>INSTAGRAM</h4>
+                <h4>FACEBOOK</h4>
+                <h4>TWITTER</h4>
+                <h4>PINTEREST</h4>
+                <h4>YOUTUBE</h4>
+                <h4>SPOTIFY</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Aspernatur reiciendis corporis <br> neque,
+                optio expedita cumque enim iusto</p>
+        </div>
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5">
+        </div>
+
+    </div>
 
 </body>
 
 </html>
 <script>
 
-//---------------------------------------------------------------------------
-    window.addEventListener("scroll",changeColorOfNavBar);
-//kdfdksffj
+    //---------------------------------------------------------------------------
+    
+    window.addEventListener("scroll", changeColorOfNavBar);
+
     function changeColorOfNavBar() {
         let nav = document.querySelector("#top-rigth-nav");
         let menuButton = document.querySelector("#menu-button");
         let bottomNavBar = document.querySelector("#bottom-nav-bar");
+        let reset = document.querySelector("#bottom-nav-bar").innerHTML;
         let scrollValue = window.scrollY;
         // console.log(scrollValue);
-        if(scrollValue>600 && scrollValue<2000) {
+        if (scrollValue > 600 && scrollValue < 2000) {
             nav.style.color = "black";
             menuButton.style.color = "black";
             bottomNavBar.style.color = "black";
-        }else if(scrollValue>2000 || scrollValue<600) {
+        } else if (scrollValue > 2000 && scrollValue < 2500 || scrollValue < 600) {
             nav.style.color = "white";
             menuButton.style.color = "white";
             bottomNavBar.style.color = "white";
+        } else if (scrollValue >= 2500) {
+            nav.style.color = "black";
+            menuButton.style.color = "black";
         }
-        if(scrollValue>100 && scrollValue<1500) {
+        if (scrollValue > 100 && scrollValue < 1500) {
             bottomNavBar.style.color = "black";
-        }else if(scrollValue>1500 || scrollValue<100) {
+        } else if (scrollValue > 1500 && scrollValue < 2000 || scrollValue < 100) {
             bottomNavBar.style.color = "white";
         }
     }
+
 //---------------------------------------------------------------------------
 
 </script>
