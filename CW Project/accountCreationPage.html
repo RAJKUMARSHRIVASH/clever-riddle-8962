@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login page</title>
+    <title>Create Account</title>
     <style>
         body {
             width: 100%;
@@ -86,15 +86,19 @@
             margin-left: -30%;
         }
 
-        #top-rigth-nav>h4:nth-child(3) {
+        #top-rigth-nav>h4:nth-child(4) {
             font-size: large;
             outline: 1px solid grey;
         }
 
+        #card {
+            margin-top: -4%;
+        }
+
         #login-card {
             /* border: 1px solid; */
-            width: 15%;
-            margin-top: 20vh;
+            width: 20%;
+            margin-top: 15vh;
             margin-left: 18vh;
             display: flex;
             flex-direction: column;
@@ -116,7 +120,18 @@
             font-size: 12px;
         }
 
+        #login-card>select {
+            border: 0px;
+            border-bottom: 1px solid grey;
+            font-size: 12px;
+        }
+
         #login-card>input:focus {
+            outline: 0px;
+
+        }
+
+        #login-card>select:focus {
             outline: 0px;
 
         }
@@ -126,24 +141,22 @@
 
         }
 
-        #login-card>p {
-            color: grey;
-            font-size: 10px;
+        #login-card>select:hover {
+            cursor: pointer;
+
         }
 
-        #login-card>#login-submit-button {
-            margin-top: 10%;
+        #login-submit-button {
             border-bottom: 0px;
             padding-top: 4%;
             padding-bottom: 4%;
             background-color: black;
             color: aliceblue;
+            margin-top: 2%;
         }
 
-        #login-card>#login-submit-button:hover {
-
-            background-color: rgb(57, 56, 56);
-
+        #login-submit-button:hover {
+            background-color: rgb(60, 59, 59);
         }
 
         label {
@@ -152,8 +165,22 @@
             transition: all 0.2s ease-out;
         }
 
+        .countrsateLable {
+            color: grey;
+            transform: translate(0.25rem, 0.5rem);
+            transition: all 0.2s ease-out;
+            margin-top: -10%;
+
+        }
+
         input:focus+label {
             transform: translate(0, -2.75rem);
+            display: block;
+            font-size: 10px;
+            /* to lowering the the text size when moving out the text */
+        }
+
+        select:focus {
             display: block;
             font-size: 10px;
             /* to lowering the the text size when moving out the text */
@@ -166,50 +193,32 @@
             /* to lowering the the text size when moving out the text */
         }
 
-        #card {
-            display: flex;
-            gap: 15%;
+        select :not(:placeholder-shown) {
+            transform: translate(0, -2.75rem);
+            display: block;
+            font-size: 10px;
+            /* to lowering the the text size when moving out the text */
         }
 
-        #create-suggestion {
-            width: 22%;
-            margin-top: 20vh;
-            margin-left: 18vh;
-            display: flex;
-            flex-direction: column;
+        .checkbox {
+            position: relative;
+        }
+
+        span {
+            color: grey;
             font-size: 12px;
-            height: 30vh;
-            gap: 5%;
         }
 
-        #create-suggestion>h1 {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        #create-suggestion>button {
-            margin-top: 10%;
-            border-bottom: 0px;
-            padding-top: 2%;
-            padding-bottom: 2%;
-            margin-right: 20%;
-            background-color: black;
-            color: aliceblue;
-        }
-
-        #create-suggestion>button:hover {
-            background-color: rgb(57, 56, 56);
-
+        span>input:hover {
+            cursor: pointer;
         }
 
         #eye {
-            transform: translate(90%, 130%);
+            transform: translate(95%, 130%);
             /*to reposition the element or move the element */
         }
 
         #eye:hover {
-            /* color: blue; */
             cursor: pointer;
         }
     </style>
@@ -232,6 +241,7 @@
                         <div>
                             <h3><u>SEARCH</u></h3>
                         </div>
+                        <h4><a href="./LOGIN.html" style="color:unset; text-decoration: none;">LOG IN</a></h4>
                         <h4><a href="help.html" style="color:unset; text-decoration: none;">HELP</a></h4>
                         <!-- for cart symbole -->
                         <h4>&#128722;</h4>
@@ -241,25 +251,42 @@
         </header>
         <div id="card">
             <form id="login-card">
-                <h1>LOG IN</h1>
+                <h1>PERSONAL DETAILS</h1>
                 <input type="email" name="email" id="email" placeholder="" required>
                 <label for="email">E-mail</label>
 
                 <span onclick="showPassword()" id="eye">&#128065;</span>
-                <input type="password" name="password" id="password" placeholder="" size=20 required>
+                <input type="password" name="password" id="password" placeholder="" required>
                 <label for="password">Password</label>
-                <p>HAVE YOU FORGOTTEN YOU PASSWORD?</p>
-                <input type="submit" name="login" id="login-submit-button" value="LOG IN">
+
+                <input type="text" name="name" id="name" placeholder="" required>
+                <label for="name">Name</label>
+
+                <input type="text" name="Address" id="Address" placeholder="" required>
+                <label for="Address">Address</label>
+
+                <input type="text" name="locality" id="locality" placeholder="" required="false">
+                <label for="locality">locality</label>
+
+                <label class="countrsateLable" for="country">Country</label>
+                <select name="country" id="country">
+                    <option value="">--</option>
+                </select>
+                <br>
+
+                <input type="text" name="state" id="state" placeholder="" required>
+                <label for="state">State</label>
+
+                <input type="pincode" name="pincode" id="pincode" placeholder="" required>
+                <label for="pincode">Pincode</label>
+
+
+                <span class="checkbox"><input type="checkbox" required> I WISH TO RECEIVE ZARA NEWS ON MY E-MAIL</span>
+
+                <span class="checkbox"><input type="checkbox" required> I ACCEPT THE PRIVACY STATEMENT</span>
+
+                <input type="submit" name="CREATE ACCOUNT" id="login-submit-button" value="CREATE ACCOUNT">
             </form>
-            <div id="create-suggestion">
-                <h1>REGISTER</h1>
-                <p>IF YOU STILL DON'T HAVE A <b>FASHION MORE.COM</b> ACCOUNT, USE THIS OPTION TO ACCESS THE REGISTRATION
-                    FORM.</p>
-                <p>BY GIVING US YOUR DETAILS, PURCHASING IN <b>FASHION MORE.COM</b> WILL BE FASTER AND AN ENJOYABLE
-                    EXPERIENCE.</p>
-                <button><a href="accountCreationPage.html" style="text-decoration: none; color: unset;">CREATE
-                        ACCOUNT</a></button>
-            </div>
 
         </div>
 
@@ -269,8 +296,8 @@
 </html>
 
 <script>
-    
-    //*************************************************************************
+
+    //******************************************************************************
     function showPassword() {
         let pass = document.getElementById("password");
 
@@ -282,29 +309,72 @@
             document.getElementById("eye").style.color = "black";
         }
     }
-    //*************************************************************************
+    //***************************************************************************
+    //-----------------------------------------------------------------------
+    let bag = [];
 
-    let accountData = JSON.parse(localStorage.getItem("personData"));
+    fetch("https://restcountries.com/v3.1/all")
+        .then(res => res.json())
+        .then(data => { selectCountryCity(data); bag = data; })
+        .catch(err => console.log(err));
 
-    document.querySelector("form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        let email = document.querySelector("#email").value;
-        let pass = document.querySelector("#password").value;
+    function selectCountryCity(data) {
 
-        let check = false;
-        accountData.forEach(element => {
-            if (element.email == email) {
-                check = true;
-                return;
-            }
+        data.forEach(element => {
+            //    console.log(element.name.common);
+
+            let opt = document.createElement("option");
+            opt.innerText = element.name.common;
+            document.querySelector("#country").append(opt);
         });
-        if (check == true) {
-            alert("Login Successfull");
-        } else {
-            alert("Please register first");
+
+    }
+    //--------------------------------------------------------------------------------------
+    let personData = JSON.parse(localStorage.getItem("personData")) || [];
+
+    document.querySelector("form").addEventListener("submit", store);
+
+    function store(e) {
+        e.preventDefault();   // preventing the page to be refreshed while submitting the FORM
+
+        let email = document.querySelector("#email").value;
+        let password = document.querySelector("#password").value;
+        let name = document.querySelector("#name").value;
+        let Address = document.querySelector("#Address").value;
+        let locality = document.querySelector("#locality").value;
+        let countrsateLable = document.querySelector(".countrsateLable").value;
+        let state = document.querySelector("#state").value;
+        let pincode = document.querySelector("#pincode").value;
+
+        // storing these values in a object
+        let personOBJ = { // want to keep the key name and value name same then
+            email,
+            password,
+            name,
+            Address,
+            locality,
+            countrsateLable,
+            state,
+            pincode
+        };
+
+        // checking weather the user is already registered or not 
+
+        let check = true;
+        for (let i = 0; i < personData.length; i++) {
+            if (personData[i].email == personOBJ.email) {
+                check = false;
+                break;
+            }
         }
-    });
+        if (check == true) {
+            personData.push(personOBJ);
+            localStorage.setItem("personData", JSON.stringify(personData));
+            alert("succefully Account created");
+        } else {
+            alert("Email Already exists");
+        }
+    }
 
-    //*****************************************************************************
-
+//---------------------------------------------------------------------------------
 </script>
