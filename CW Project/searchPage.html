@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Page</title>
+    <title>Search Page</title>
     <style>
-         body {
+        body {
             width: 100%;
             margin: auto;
             font-family: 'Rajdhani', sans-serif;
@@ -39,7 +40,7 @@
             padding: 8px;
             font-family: cursive;
             margin: 2px;
-            font-size:26px;
+            font-size: 26px;
         }
 
         #logo-design-container>h1:nth-child(2) {
@@ -48,7 +49,7 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin: 6px;
             font: bolder;
-            font-size:26px
+            font-size: 26px
         }
 
         #Fixed-nav-bar {
@@ -76,7 +77,6 @@
             justify-content: center;
             align-content: center;
             font-family: 'Century Gothic';
-            color: black;
 
         }
 
@@ -89,37 +89,58 @@
             font-size: large;
             outline: 1px solid grey;
         }
-        .help-contents{
-            width: 80%;
-            margin: auto;
-            height: 80vh;
+
+        #opt {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 10%;
+            gap: 25%;
+            align-items: flex-end;
+            font-size: small;
+            margin-left: 10%;
+            color: rgb(96, 95, 95);
         }
-        .help-contents>h1{
-            padding-top: 15%;
+
+        #searchBox {
+            margin: 70px;
+            margin-left: 140px;
+            border: none;
+            border-bottom: 1px solid;
             font-size: large;
+            background-color: transparent;
         }
 
-        #help-items{
-            width: 80%;
+        #searchBox:focus {
+            outline: none;
+        }
+
+        #searchBox::placeholder {
+            color: rgb(60, 59, 59);
+        }
+        #productGallery{
             display: grid;
-            grid-template-columns: repeat(6,1fr);
-            height: 100%;
-            text-align: center;
-            font-size: 10px;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+            padding-top: 15%;
+            width: 80%;
             margin: auto;
-            font: 1000;
-            gap: 5%;
+            text-align: center;
+            
         }
-        #help-items img {
-            width: 35%;
-
+        img{
+            width: 100%;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+        button{
+            background-color: rgb(6, 179, 179);
+            color: white;
+            border: none;
+            padding: 2% 3%;
+            border-radius: 5px;
         }
     </style>
 </head>
+
 <body>
     <div class="main-container">
         <header>
@@ -133,59 +154,66 @@
                         <h1>FASHION</h1>
                         <h1 id="logo1">MORE</h1>
                     </div>
+                    <div id="opt">
+                        <h4>WOMEN</h4>
+                        <h4>MEN</h4>
+                        <h4>KIDS</h4>
+                    </div>
                     <div id="top-rigth-nav">
-                        <div>
-                            <h3><u ><a href="./searchPage.html" style="color:unset;text-decoration: none;">SEARCH</a></u></h3>
-                        </div>
-                        <h4 id="login"><a href="./LOGIN.html" style="color:unset; text-decoration: none;">LOG IN</a></h4>
+                        <h4><a href="./LOGIN.html" style="color:unset; text-decoration: none;">LOG IN</a></h4>
+                        <h4><a href="help.html" style="color:unset; text-decoration: none;">HELP</a></h4>
                         <!-- for cart symbole -->
                         <h4>&#128722;</h4>
                     </div>
                 </div>
             </div>
         </header>
+
+        <input type="text" name="searchInput" id="searchBox" placeholder="ENTER SEARCH TERMS" size="140%">
+
     </div>
-    <div class="help-contents">
-        <h1>HELP</h1>
-        <div id="help-items">
-            <div>
-                <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
-                <p>SHOP AT FASHION MORE.COM</p>
-            </div>
-            <div>
-                <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
-                <p>SHOP AT FASHION MORE.COM</p>
-            </div>
-            <div>
-                <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
-                <p>SHOP AT FASHION MORE.COM</p>
-            </div>
-            <div>
-                <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
-                <p>SHOP AT FASHION MORE.COM</p>
-            </div>
-            <div>
-                <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
-                <p>SHOP AT FASHION MORE.COM</p>
-            </div>
-            <div>
-                <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
-                <p>SHOP AT FASHION MORE.COM</p>
-            </div>
-            <div>
-                <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
-                <p>SHOP AT FASHION MORE.COM</p>
-            </div>
-            <div>
-                <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
-                <p>SHOP AT FASHION MORE.COM</p>
-            </div>
-            <div>
-                <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
-                <p>SHOP AT FASHION MORE.COM</p>
-            </div>
-        </div>
-    </div>
-    
+    <div id="productGallery">
 </body>
+
 </html>
+
+<script>
+    let bag = [];
+
+    fetch("https://api.escuelajs.co/api/v1/products")
+        .then(response => response.json())
+        .then(response => { display(response); bag = response; })
+        .catch(err => console.error(err));
+
+    function display(data) {
+        // console.log(data);
+        data.forEach(element => {
+
+            let div = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.setAttribute("src", element.category.image);
+
+            let title = document.createElement("h2");
+            title.innerText = element.title;
+
+            let des = document.createElement("p");
+            des.innerText = element.description;
+
+            let price = document.createElement("h3");
+            price.innerText = "Price: "+ element.price+ " ₹";
+
+            let category = document.createElement("h4");
+            category.innerText = element.category.name;
+
+            let btn = document.createElement("button");
+            btn.innerText = "Add to Cart";
+
+            div.append(img,title,des,price,category,btn);
+            document.querySelector("#productGallery").append(div);
+
+        });
+    }
+
+
+</script>
