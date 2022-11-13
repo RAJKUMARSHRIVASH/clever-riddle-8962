@@ -164,7 +164,7 @@
             display: none;
         }
 
-        button {
+        #productGallery>div>button {
             background-color: rgb(6, 179, 179);
             color: white;
             border: none;
@@ -173,7 +173,7 @@
             margin-bottom: 5%;
         }
 
-        button:hover {
+        #productGallery>div>button:hover {
             background-color: rgb(185, 245, 245);
         }
     </style>
@@ -248,20 +248,20 @@
             let category = document.createElement("h4");
             category.innerText = element.category.name;
 
-            let btn = document.createElement("button");
-            btn.innerText = "Add to Cart";
-            btn.addEventListener("click",()=>{
+            let button = document.createElement("button");
+            button.innerText = "Add to Cart";
+
+            button.addEventListener("click",()=>{
 
                 console.log('hello');
             });
 
-            div.append(img, title, des, price, category, btn);
+            div.append(img, title, des, price, category, button);
             document.querySelector("#productGallery").append(div);
 
         });
     }
     //********************************************************************************
-
 
     //***************************searching / filter functionality*********************
 
