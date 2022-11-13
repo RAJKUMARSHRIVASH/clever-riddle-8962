@@ -210,14 +210,13 @@
         <input type="text" name="searchInput" id="searchBox" placeholder="ENTER SEARCH TERMS" size="140%"
             oninput="search()">
     </div>
-    <div id="productGallery">
+    <div id="productGallery"></div>
 </body>
 
 </html>
 
 <script>
     let bag = [];
-
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     //******************************************************************************
@@ -249,11 +248,9 @@
             category.innerText = element.category.name;
 
             let button = document.createElement("button");
-            button.innerText = "Add to Cart";
-
+            button.innerText = "Add To Cart";
             button.addEventListener("click",()=>{
-
-                console.log('hello');
+                alert("Item Added to the card");
             });
 
             div.append(img, title, des, price, category, button);
