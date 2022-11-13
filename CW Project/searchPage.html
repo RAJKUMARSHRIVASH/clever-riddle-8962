@@ -115,28 +115,66 @@
         #searchBox::placeholder {
             color: rgb(60, 59, 59);
         }
-        #productGallery{
+
+        #productGallery {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             padding-top: 15%;
             width: 80%;
             margin: auto;
             text-align: center;
-            
+
         }
-        img{
+
+        #productGallery>div {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+        }
+
+        #productGallery>div>h2 {
+            text-align: left;
+            padding-left: 4%;
+        }
+
+        #productGallery>div>p {
+            text-align: left;
+            padding-left: 4%;
+            padding-right: 4%;
+
+        }
+
+        #productGallery>div>h3 {
+            text-align: left;
+            padding-left: 4%;
+
+        }
+
+        #productGallery>div>h4 {
+            text-align: left;
+            padding-left: 4%;
+
+        }
+
+        img {
             width: 100%;
         }
-        ::-webkit-scrollbar{
+
+        ::-webkit-scrollbar {
             display: none;
         }
-        button{
+
+        #productGallery>div>button {
             background-color: rgb(6, 179, 179);
             color: white;
             border: none;
             padding: 2% 3%;
             border-radius: 5px;
+            margin-bottom: 5%;
+        }
+
+        #productGallery>div>button:hover {
+            background-color: rgb(185, 245, 245);
         }
     </style>
 </head>
@@ -155,9 +193,9 @@
                         <h1 id="logo1">MORE</h1>
                     </div>
                     <div id="opt">
-                        <h4>WOMEN</h4>
-                        <h4>MEN</h4>
-                        <h4>KIDS</h4>
+                        <h4 id="optWoman" onclick="search1()">WOMEN</h4>
+                        <h4 id="optMan" onclick="search2()">MEN</h4>
+                        <h4 id="optKids" onclick="search3()">KIDS</h4>
                     </div>
                     <div id="top-rigth-nav">
                         <h4><a href="./LOGIN.html" style="color:unset; text-decoration: none;">LOG IN</a></h4>
@@ -169,16 +207,19 @@
             </div>
         </header>
 
-        <input type="text" name="searchInput" id="searchBox" placeholder="ENTER SEARCH TERMS" size="140%">
-
+        <input type="text" name="searchInput" id="searchBox" placeholder="ENTER SEARCH TERMS" size="140%"
+            oninput="search()">
     </div>
-    <div id="productGallery">
+    <div id="productGallery"></div>
 </body>
 
 </html>
 
 <script>
     let bag = [];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    //******************************************************************************
 
     fetch("https://api.escuelajs.co/api/v1/products")
         .then(response => response.json())
@@ -201,19 +242,70 @@
             des.innerText = element.description;
 
             let price = document.createElement("h3");
-            price.innerText = "Price: "+ element.price+ " ₹";
+            price.innerText = "Price: " + element.price + " ₹";
 
             let category = document.createElement("h4");
             category.innerText = element.category.name;
 
-            let btn = document.createElement("button");
-            btn.innerText = "Add to Cart";
+            let button = document.createElement("button");
+            button.innerText = "Add To Cart";
+            button.addEventListener("click",()=>{
+                alert("Item Added to the card");
+            });
 
-            div.append(img,title,des,price,category,btn);
+            div.append(img, title, des, price, category, button);
             document.querySelector("#productGallery").append(div);
 
         });
     }
+    //********************************************************************************
 
+    //***************************searching / filter functionality*********************
+
+    function search() {
+
+        document.querySelector("#productGallery").innerHTML = "";
+        let input = document.querySelector("#searchBox").value;
+
+        let newData = bag.filter(element => {
+            return element.title.toLowerCase().includes(input.toLowerCase());
+        });
+        display(newData);
+
+    }
+
+    function search1() {
+
+        document.querySelector("#productGallery").innerHTML = "";
+        let keyword = document.querySelector("#optWoman").innerText;
+        // console.log(bag);
+
+        let newData = bag.filter(element => {
+            return element.title.toLowerCase().includes(keyword.toLowerCase());
+        });
+        display(newData);
+    }
+    function search2() {
+
+        document.querySelector("#productGallery").innerHTML = "";
+        let keyword = document.querySelector("#optMan").innerText;
+        // console.log(bag);
+
+        let newData = bag.filter(element => {
+            return element.title.toLowerCase().includes(keyword.toLowerCase());
+        });
+        display(newData);
+    }
+    function search3() {
+
+        document.querySelector("#productGallery").innerHTML = "";
+        let keyword = document.querySelector("#optKids").innerText;
+        // console.log(bag);
+
+        let newData = bag.filter(element => {
+            return element.title.toLowerCase().includes(keyword.toLowerCase());
+        });
+        display(newData);
+    }
 
 </script>
