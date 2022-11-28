@@ -293,7 +293,7 @@
 
         let check = false;
         accountData.forEach(element => {
-            if (element.email == email) {
+            if (element.email == email && element.password == pass) {
                 check = true;
                 return;
             }
@@ -301,7 +301,7 @@
         if (check == true) {
             alert("Login Successfull");
         } else {
-            alert("Please register first");
+            alert("Check your id and Password or Please register first");
         }
     });
 
