@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Page</title>
+    <title>Cart Page</title>
     <style>
         body {
             width: 100%;
@@ -98,16 +98,6 @@
             font-size: large;
             outline: 1px solid grey;
         }
-
-        #opt {
-            display: flex;
-            gap: 25%;
-            align-items: flex-end;
-            font-size: small;
-            margin-left: 10%;
-            color: rgb(96, 95, 95);
-        }
-
         #searchBox {
             margin: 40px;
             margin-bottom: 10px;
@@ -175,7 +165,7 @@
         }
 
         #productGallery>div>button {
-            background-color: rgb(6, 179, 179);
+            background-color: rgb(179, 6, 49);
             color: white;
             border: none;
             padding: 2% 3%;
@@ -185,7 +175,7 @@
         }
 
         #productGallery>div>button:hover {
-            background-color: rgb(49, 227, 227);
+            background-color: rgb(237, 73, 138);
         }
     </style>
 </head>
@@ -203,17 +193,9 @@
                         <h1><a href="/index.html" style="color:unset; text-decoration: none;">FASHION</a></A></h1>
                         <h1 id="logo1">MORE</h1>
                     </div>
-                    <div id="opt">
-                        <h4 id="optWoman" onclick="search1()">WOMEN</h4>
-                        <h4 id="optMan" onclick="search2()">MEN</h4>
-                        <h4 id="optKids" onclick="search3()">KIDS</h4>
-                    </div>
+                 
                     <div id="top-rigth-nav">
                         <h4><a href="./index.html" style="color:unset; text-decoration: none;">HOME</a></h4>
-                        <h4><a href="./LOGIN.html" style="color:unset; text-decoration: none;">LOG IN</a></h4>
-                        <h4><a href="help.html" style="color:unset; text-decoration: none;">HELP</a></h4>
-                        <!-- for cart symbole -->
-                        <h4><a href="cart.html" style="color:unset; text-decoration: none;">&#128722;</a></h4>
                     </div>
                 </div>
                 <input type="text" name="searchInput" id="searchBox" placeholder="ENTER SEARCH TERMS" size="140%"
@@ -259,7 +241,7 @@
             category.innerText = element.category.name;
 
             let btn = document.createElement("button");
-            btn.innerText = "Add To Cart";
+            btn.innerText = "Remove";
             btn.addEventListener("click", () => {
 
                 let image = document.querySelector("#productGallery>div>img").src;
@@ -313,41 +295,5 @@
         display(newData);
 
     }
-
-    function search1() {
-
-        document.querySelector("#productGallery").innerHTML = "";
-        let keyword = document.querySelector("#optWoman").innerText;
-        keyword = "soft";
-        // console.log(bag);
-
-        let newData = bag.filter(element => {
-            return element.title.toLowerCase().includes(keyword.toLowerCase());
-        });
-        display(newData);
-    }
-    function search2() {
-
-        document.querySelector("#productGallery").innerHTML = "";
-        let keyword = document.querySelector("#optMan").innerText;
-        keyword = "small";
-        // console.log(bag);
-
-        let newData = bag.filter(element => {
-            return element.title.toLowerCase().includes(keyword.toLowerCase());
-        });
-        display(newData);
-    }
-    function search3() {
-
-        document.querySelector("#productGallery").innerHTML = "";
-        let keyword = document.querySelector("#optKids").innerText;
-        keyword = "rubber";
-        // console.log(bag);
-
-        let newData = bag.filter(element => {
-            return element.title.toLowerCase().includes(keyword.toLowerCase());
-        });
-        display(newData);
-    }
+  
 </script>
