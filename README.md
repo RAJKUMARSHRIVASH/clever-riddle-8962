@@ -1,5 +1,3 @@
-Construct week project -1 unit2 for masai school (clone of Zara.com)
-
 
 # Fashion More
 
